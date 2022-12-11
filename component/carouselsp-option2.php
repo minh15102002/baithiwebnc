@@ -1,6 +1,6 @@
 <?php
 require_once('./db/connect.php');
-$sql1 = "select * from san_pham where danh_muc=N'Đồng hồ nam' and id >=22 and id<=25 ";
+$sql1 = "select * from san_pham where danh_muc=N'Đồng hồ nam' and id >=20 and id<=25 ";
 $result1 = mysqli_query($connect, $sql1);
 ?>
 <?php foreach ($result1 as $value) : ?>

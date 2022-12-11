@@ -23,37 +23,17 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
 <body>
     <!-- Slider Area -->
     <section class="hero-slider">
-        <!-- Single Slider -->
-        <div class="single-slider">
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col-lg-9 offset-lg-3 col-12">
-                        <div class="text-inner">
-                            <div class="row">
-                                <div class="col-lg-7 col-12">
-                                    <div class="hero-text">
-                                        <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                        <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
-                                        <div class="button">
-                                            <a href="#" class="btn">Shop Now!</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ End Single Slider -->
+         <?php include('silder.php') ?>
     </section>
     <!--/ End Slider Area -->
-
+    <div class="button">
+        <a style="color:blue" href="index.php" class="btn">Shop Now!</a>
+    </div>
+  
     <!-- Start Small Banner  -->
-    <section class="small-banner section">
+    <!-- <section class="small-banner section">
         <div class="container-fluid">
             <div class="row">
-                <!-- Single Banner  -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner">
                         <img src="images/whathot-03.jpg" alt="#">
@@ -64,8 +44,6 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         </div>
                     </div>
                 </div>
-                <!-- /End Single Banner  -->
-                <!-- Single Banner  -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner">
                         <img src="images/whathot-04.jpg" alt="#">
@@ -76,8 +54,6 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         </div>
                     </div>
                 </div>
-                <!-- /End Single Banner  -->
-                <!-- Single Banner  -->
                 <div class="col-lg-4 col-12">
                     <div class="single-banner tab-height">
                         <img src="images/whathot-05.jpg" alt="#">
@@ -88,10 +64,9 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         </div>
                     </div>
                 </div>
-                <!-- /End Single Banner  -->
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End Small Banner -->
 
     <!-- Start Product Area -->
@@ -100,7 +75,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Item</h2>
+                        <h2>Danh sách sản phẩm</h2>
                     </div>
                 </div>
             </div>
@@ -146,7 +121,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                                                     </div>
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="product-details.php?id=' . $item['id'] . '">' . $item['title'] . '</a></h3>
+                                                    <h3><a href="product-details.php?id=' . $item['id'] . '">' . $item['ten_san'] . '</a></h3>
                                                     <div class="product-price">
                                                         <span>$' . $item['gia'] . '</span>
                                                     </div>
@@ -1093,10 +1068,10 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                 <!-- Single Banner  -->
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner">
-                        <img src="https://via.placeholder.com/600x370" alt="#">
+                        <img src="https://galle.vn/media/banner/item/uu-dai-alpina-380x227.jpg" alt="#">
                         <div class="content">
-                            <p>Man's Collectons</p>
-                            <h3>Man's items <br>Up to<span> 50%</span></h3>
+                            <p>Nam</p>
+                            <h3>Danh mục nam<br>Up to<span> 50%</span></h3>
                             <a href="#">Shop Now</a>
                         </div>
                     </div>
@@ -1105,10 +1080,10 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                 <!-- Single Banner  -->
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner">
-                        <img src="https://via.placeholder.com/600x370" alt="#">
+                        <img src="https://galle.vn/media/banner/item/HP_FridayDay_380x227_.jpg" alt="#">
                         <div class="content">
-                            <p>shoes women</p>
-                            <h3>mid season <br> up to <span>70%</span></h3>
+                            <p>Nữ</p>
+                            <h3>Danh mục nữ <br> up to <span>70%</span></h3>
                             <a href="#" class="btn">Shop Now</a>
                         </div>
                     </div>
@@ -1125,7 +1100,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Hot Item</h2>
+                        <h2>Nổi bật</h2>
                     </div>
                 </div>
             </div>
@@ -1468,7 +1443,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>From Our Blog</h2>
+                        <h2>Liên quan</h2>
                     </div>
                 </div>
             </div>
@@ -1479,7 +1454,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         <img src="https://via.placeholder.com/370x300" alt="#">
                         <div class="content">
                             <p class="date">22 July , 2020. Monday</p>
-                            <a href="#" class="title">Sed adipiscing ornare.</a>
+                            <a href="#" class="title">Phụ kiện.</a>
                             <a href="#" class="more-btn">Continue Reading</a>
                         </div>
                     </div>
@@ -1491,7 +1466,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         <img src="https://via.placeholder.com/370x300" alt="#">
                         <div class="content">
                             <p class="date">22 July, 2020. Monday</p>
-                            <a href="#" class="title">Man’s Fashion Winter Sale</a>
+                            <a href="#" class="title">Man</a>
                             <a href="#" class="more-btn">Continue Reading</a>
                         </div>
                     </div>
@@ -1503,7 +1478,7 @@ $productList_01  = executeResult('select * from san_pham where id >= 5 and id <=
                         <img src="https://via.placeholder.com/370x300" alt="#">
                         <div class="content">
                             <p class="date">22 July, 2020. Monday</p>
-                            <a href="#" class="title">Women Fashion Festive</a>
+                            <a href="#" class="title">Women </a>
                             <a href="#" class="more-btn">Continue Reading</a>
                         </div>
                     </div>
