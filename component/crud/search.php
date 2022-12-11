@@ -1,10 +1,10 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "buy_sell_php");
+$conn = mysqli_connect("localhost", "root", "", "wednangcao1");
 if (isset($_GET["search"]) && !empty($_GET["search"])) {
     $key = $_GET["search"];
-    $sql = "SELECT * FROM products WHERE title LIKE " % $key % " OR thumbnail LIKE " % $key % " OR content LIKE " % $key % " OR price LIKE " % $key % "";
+    $sql = "SELECT * FROM san_pham WHERE ten_san LIKE " % $key % " OR anh LIKE " % $key % " OR mo_ta LIKE " % $key % " OR gia LIKE " % $key % "";
 } else {
-    $sql = "SELECT * products";
+    $sql = "SELECT * san_pham";
 }
 $result = mysqli_query($conn, $sql);
 ?>
@@ -40,17 +40,17 @@ $result = mysqli_query($conn, $sql);
 <body>
     <table cellspacing="0" cellpadding="5" width="85px">
         <tr>
-            <th>Qué quan</th>
-            <th>Ngay sinh</th>
-            <th>Nganh hoc</th>
-            <th>Tac vu</th>
+            <th>Quê quán</th>
+            <th>Ngày sinh</th>
+            <th>Ngành học</th>
+            <th>Tác vụ</th>
         </tr>
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
-            $title = $row["title"];
-            $thumbnail = $row["thumbnail"];
-            $content = $row["content"];
-            $price = $row["price"];
+            $title = $row["ten_san"];
+            $thumbnail = $row["anh"];
+            $content = $row["mo_ta"];
+            $price = $row["gia"];
         }
         ?>
         <tr>

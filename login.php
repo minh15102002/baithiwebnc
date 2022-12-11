@@ -52,7 +52,7 @@ if(isset($_SESSION['id'])) {
                     <button style="height: 50px;border-radius: 5px;" class="btn btn-default">Đăng Nhập</button>
                 </form>
             </div>
-            <div class="col-sm-6"><img src="https://product.hstatic.net/1000006063/product/merzy_e_2800af15bd99458ca7d9b52d543266a0_1024x1024.jpg" alt="" width="100%"></div>
+            <div class="col-sm-6"><img src="https://cdn3.dhht.vn/wp-content/uploads/2022/12/mini-banner-trang-chu-fossil-heritage.jpg" alt="" width="100%"></div>
         </div>
     </div>
 

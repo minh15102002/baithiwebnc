@@ -82,6 +82,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-2 col-md-3 col-12" style="margin-top: 40px;">
                     <div class="right-bar">
                         <!-- Search Form -->
@@ -93,6 +94,12 @@
                         </div>
                         <div class="sinlge-bar shopping">
                             <?php
+                            
+                            // session_start();
+                            include './database/database.php';
+                            require_once('utils/utility.php');
+                            require_once('db/dbhelper.php');
+                            require_once('api/checkout-form.php');
                             $cart = [];
                             if (isset($_COOKIE['cart'])) {
                                 $json = $_COOKIE['cart'];
@@ -103,7 +110,7 @@
                                 $count += $item['num'];
                             }
                             ?>
-                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count"><?= $count ?></span></a>
+                            <a href="cart.php" class="single-icon"><i class="ti-bag"></i> <span class="total-count"><?= $count ?></span></a>
                             <!-- Shopping Item -->
                             <div class="shopping-item">
                                 <?php
@@ -118,12 +125,12 @@
                                             break;
                                         }
                                     }
-                                    $total  += $num * $item['price'];
+                                    $total  += $num * $item['gia'];
                                     echo '<ul class="shopping-list">
                                         <li>
                                         <a href="#" onclick="deleteCart(' . $item['id'] . ')"><i class="ti-trash remove-icon" ></i></a>
-                                            <a class="cart-img" href="#"><img src="' . $item['thumbnail'] . '" alt="#"></a>
-                                            <p class="quantity">1x - <span class="amount">$' . $item['price'] . '</span></p>
+                                            <a class="cart-img" href="#"><img src="' . $item['anh'] . '" alt="#"></a>
+                                            <p class="quantity">1x - <span class="amount">$' . $item['gia'] . '</span></p>
                                         </li>
                                     </ul>
                                     <div class="bottom">
@@ -159,8 +166,8 @@
                                             <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
                                             <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
-                                                    <li><a style="color:gray ;" href="product_1.php">Chăm Sóc Da</a></li>
-                                                    <li><a style="color:gray ;" href="product_2.php">Trang Điểm</a></li>
+                                                    <li><a style="color:gray ;" href="product_1.php">Đồng hồ nam</a></li>
+                                                    <li><a style="color:gray ;" href="product_2.php">Đồng hồ nữ</a></li>
                                                 </ul>
                                             </li>
                                             <li><a style="color:gray ;" href="#">Cửa Hàng<i class="ti-angle-down"></i><span class="new">New</span></a>

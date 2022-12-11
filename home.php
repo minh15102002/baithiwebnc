@@ -2,8 +2,8 @@
 require_once('utils/utility.php');
 require_once('db/dbhelper.php');
 
-$productList  = executeResult('select * from products');
-$productList_01  = executeResult('select * from products where id >= 5 and id <= 8');
+$productList  = executeResult('select * from san_pham');
+$productList_01  = executeResult('select * from san_pham where id >= 5 and id <= 8');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,9 +110,9 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                         <div class="nav-main">
                             <!-- Tab Nav -->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Man</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Woman</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Kids</a></li>
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Nam</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Nữ</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Đôi</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Accessories</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Essential</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Prices</a></li>
@@ -131,8 +131,8 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.php?id=' . $item['id'] . '">
-                                                        <img class="default-img" src="' . $item['thumbnail'] . '" alt="#">
-                                                        <img class="hover-img" src="' . $item['thumbnail'] . '" alt="#">
+                                                        <img class="default-img" src="' . $item['anh'] . '" alt="#">
+                                                        <img class="hover-img" src="' . $item['anh'] . '" alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -148,7 +148,7 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                                                 <div class="product-content">
                                                     <h3><a href="product-details.php?id=' . $item['id'] . '">' . $item['title'] . '</a></h3>
                                                     <div class="product-price">
-                                                        <span>$' . $item['price'] . '</span>
+                                                        <span>$' . $item['gia'] . '</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -170,8 +170,8 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.php?id=' . $item['id'] . '">
-                                                        <img class="default-img" src="' . $item['thumbnail'] . '" alt="#">
-                                                        <img class="hover-img" src="' . $item['thumbnail'] . '" alt="#">
+                                                        <img class="default-img" src="' . $item['anh'] . '" alt="#">
+                                                        <img class="hover-img" src="' . $item['anh'] . '" alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -185,9 +185,9 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                                                     </div>
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="product-details.php?id=' . $item['id'] . '">' . $item['title'] . '</a></h3>
+                                                    <h3><a href="product-details.php?id=' . $item['id'] . '">' . $item['ten_san'] . '</a></h3>
                                                     <div class="product-price">
-                                                        <span>$' . $item['price'] . '</span>
+                                                        <span>$' . $item['gia'] . '</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1567,7 +1567,7 @@ $productList_01  = executeResult('select * from products where id >= 5 and id <=
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <!-- Start Newsletter Inner -->
                         <div class="inner">
-                            <h4>Newsletter</h4>
+                            <h4>Bản tin</h4>
                             <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
                             <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
                                 <input name="EMAIL" placeholder="Your email address" required="" type="email">

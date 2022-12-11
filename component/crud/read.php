@@ -5,7 +5,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     require_once "../../db/config.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM products WHERE id = ?";
+    $sql = "SELECT * FROM san_pham WHERE id = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters
@@ -72,20 +72,20 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 <div class="col-md-12">
                     <h1 class="mt-5 mb-3">View Record</h1>
                     <div class="form-group">
-                        <label>Title</label>
-                        <p><b><?php echo $row["title"]; ?></b></p>
+                        <label>Tên sản phẩm</label>
+                        <p><b><?php echo $row["ten_san"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Thumbnail</label>
-                        <p><b><?php echo $row["thumbnail"]; ?></b></p>
+                        <label>Ảnh</label>
+                        <p><b><?php echo $row["anh"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
+                        <label>Mô tả</label>
                         <p><b><?php echo $row["content"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Price</label>
-                        <p><b><?php echo $row["price"]; ?></b></p>
+                        <label>Giá</label>
+                        <p><b><?php echo $row["gia"]; ?></b></p>
                     </div>
                     <p><a href="index_crud.php" class="btn btn-primary">Back</a></p>
                 </div>

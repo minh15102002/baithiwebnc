@@ -2551,8 +2551,8 @@ section .hero-slider img {
 }
 
 .shop-sidebar .single-post .image img {
-	height: 80px;
-	width: 80px;
+	height: 90px;
+	width: 90px;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -3499,8 +3499,8 @@ section .hero-slider img {
 
 .shopping-summery tbody tr img {
 	border-radius: 0;
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 }
 
 .shopping-summery tbody tr:last-child {
@@ -5009,8 +5009,8 @@ section .hero-slider img {
 
 .main-sidebar .single-post .image img {
 	float: left;
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 	margin-right: 20px;
 }
 

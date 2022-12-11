@@ -5,7 +5,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     require_once "../../db/config.php";
 
     // Prepare a delete statement
-    $sql = "DELETE FROM products WHERE id = ?";
+    $sql = "DELETE FROM san_pham WHERE id = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters

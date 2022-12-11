@@ -3,7 +3,7 @@
 require_once "../../db/config.php";
 
 // Define variables and initialize with empty values
-$title = $thumbnail = $content = $price = $quantity = "";
+$ten_san = $anh = $content = $gia = $quantity = "";
 $title_err = $thumbnail_err = $content_err = $price_err = $quantity_err = "";
 
 // Processing form data when form is submitted
@@ -12,7 +12,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $id = $_POST["id"];
 
     // Validate title
-    $input_title = trim($_POST["title"]);
+    $input_title = trim($_POST["ten_san"]);
     if (empty($input_title)) {
         $title_err = "Please enter a title.";
     } elseif (!filter_var($input_title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[a-zA-Z\s]+$/")))) {
@@ -22,7 +22,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 
     // Validate thumbnail
-    $input_thumbnail = trim($_POST["thumbnail"]);
+    $input_thumbnail = trim($_POST["anh"]);
     if (empty($input_thumbnail)) {
         $thumbnail_err = "Please enter an thumbnail.";
     } else {
@@ -63,17 +63,17 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     // Check input errors before inserting in database
     if (empty($title_err) && empty($thumbnail_err) && empty($content_err) && empty($price_err) && empty($quantity_err)) {
         // Prepare an insert statement
-        $sql = "INSERT INTO products (title, thumbnail, content, price, quantity) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO san_pham (ten_san, anh, content, gia, quantity) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sssss", $param_title, $param_thumbnail, $param_content, $param_price, $param_quantity);
 
             // Set parameters
-            $param_title = $title;
-            $param_thumbnail = $thumbnail;
+            $param_title = $ten_san;
+            $param_thumbnail = $anh;
             $param_content = $content;
-            $param_price = $price;
+            $param_price = $gia;
             $param_quantity = $quantity;
 
             // Attempt to execute the prepared statement
@@ -100,7 +100,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $id =  trim($_GET["id"]);
 
         // Prepare a select statement
-        $sql = "SELECT * FROM products WHERE id = ?";
+        $sql = "SELECT * FROM san_pham WHERE id = ?";
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
@@ -118,10 +118,10 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                     // Retrieve individual field value
-                    $param_title = $title;
-                    $param_thumbnail = $thumbnail;
+                    $param_title = $ten_san;
+                    $param_thumbnail = $anh;
                     $param_content = $content;
-                    $param_price = $price;
+                    $param_price = $gia;
                     $param_quantity = $quantity;
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
@@ -171,12 +171,12 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
                             <label>title</label>
-                            <input type="text" title="title" name="title" class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $title; ?>">
+                            <input type="text" title="title" name="title" class="form-control <?php echo (!empty($title_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $ten_san; ?>">
                             <span class="invalid-feedback"><?php echo $title_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label>thumbnail</label>
-                            <textarea title="thumbnail" name="thumbnail" class="form-control <?php echo (!empty($thumbnail_err)) ? 'is-invalid' : ''; ?>"><?php echo $thumbnail; ?></textarea>
+                            <textarea title="thumbnail" name="thumbnail" class="form-control <?php echo (!empty($thumbnail_err)) ? 'is-invalid' : ''; ?>"><?php echo $anh; ?></textarea>
                             <span class="invalid-feedback"><?php echo $thumbnail_err; ?></span>
                         </div>
                         <div class="form-group">
@@ -186,7 +186,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                         </div>
                         <div class="form-group">
                             <label>content</label>
-                            <input type="text" title="price" name="price" class="form-control <?php echo (!empty($price_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $price; ?>">
+                            <input type="text" title="price" name="price" class="form-control <?php echo (!empty($price_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $gia; ?>">
                             <span class="invalid-feedback"><?php echo $price_err; ?></span>
                         </div>
                         <div class="form-group">

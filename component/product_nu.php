@@ -1,7 +1,7 @@
 <?php
 require_once('./db/connect.php');
 
-$sql_so_san_pham="select count(*) from san_pham where danh_muc=N'Chăm Sóc Da'";
+$sql_so_san_pham="select count(*) from san_pham where danh_muc=N'Đồng hồ nữ'";
 $arr_so_san_pham=mysqli_query($connect,$sql_so_san_pham);
 $ket_qua=mysqli_fetch_array($arr_so_san_pham);
 $so_san_pham=$ket_qua['count(*)'];
@@ -16,7 +16,7 @@ if(isset($_GET['trang'])){
 }
 $bo_qua=$so_san_pham_mot_trang*($trang-1);
 
-$sql = "select * from san_pham where danh_muc=N'Chăm Sóc Da' limit $so_san_pham_mot_trang offset $bo_qua";
+$sql = "select * from san_pham where danh_muc=N'Đồng hồ nữ' limit $so_san_pham_mot_trang offset $bo_qua";
 $result = mysqli_query($connect, $sql);
 
 ?>

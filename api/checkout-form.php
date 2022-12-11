@@ -33,7 +33,7 @@ if (!empty($_POST)) {
         $idList = implode(',', $idList);
         //[2, 5, 6] => 2,5,6
 
-        $sql = "select * from products where id in ($idList)";
+        $sql = "select * from san_pham where id in ($idList)";
         $cartList = executeResult($sql);
     } else {
         $cartList = [];

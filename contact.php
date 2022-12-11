@@ -15,7 +15,7 @@ if (count($idList) > 0) {
     $idList = implode(',', $idList);
 
 
-    $sql = "select * from products where id in ($idList) ";
+    $sql = "select * from san_pham where id in ($idList) ";
     $cartList = executeResult($sql);
 } else {
     $cartList = [];
@@ -168,7 +168,7 @@ if (count($idList) > 0) {
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <!-- Start Newsletter Inner -->
                         <div class="inner">
-                            <h4>Newsletter</h4>
+                            <h4>Bản tin</h4>
                             <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
                             <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
                                 <input name="EMAIL" placeholder="Your email address" required="" type="email">
@@ -193,23 +193,21 @@ if (count($idList) > 0) {
                         <!-- Single Widget -->
                         <div class="single-footer about">
                             <div class="logo">
-                                <a href="index.php"><img src="images/logo2.png" alt="#"></a>
+                                <a href="index.php"><img src="./images/logo1.jpg" alt="#" style="max-width: 100px;border-radius: 50%;"></a>
                             </div>
-                            <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-                            <p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+                            <p class="call">Liên hệ 24/7<span><a href="tel:123456789">+084 0909 090 909</a></span></p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer links">
-                            <h4>Information</h4>
+                            <h4>Thông Tin</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Faq</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Về chúng tôi</a></li>
+                                <li><a href="#">Câu hỏi thường gặp</a></li>
+                                <li><a href="#">Điều khoản và điều kiện</a></li>
+                                <li><a href="#">Hỗ trợ</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -217,13 +215,12 @@ if (count($idList) > 0) {
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer links">
-                            <h4>Customer Service</h4>
+                            <h4>Dịch Vụ</h4>
                             <ul>
-                                <li><a href="#">Payment Methods</a></li>
-                                <li><a href="#">Money-back</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Phương thức thanh toán</a></li>
+                                <li><a href="#">Hoàn trả</a></li>
+                                <li><a href="#">Vận chuyển</a></li>
+                                <li><a href="#">Chính sách bảo mật</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -231,14 +228,14 @@ if (count($idList) > 0) {
                     <div class="col-lg-3 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer social">
-                            <h4>Get In Tuch</h4>
+                            <h4>Địa chỉ liên hệ</h4>
                             <!-- Single Widget -->
                             <div class="contact">
                                 <ul>
-                                    <li>NO. 342 - London Oxford Street.</li>
-                                    <li>012 United Kingdom.</li>
-                                    <li>info@eshop.com</li>
-                                    <li>+032 3456 7890</li>
+                                    <!-- <li>Dan Phuong</li> -->
+                                    <li>Hà Nội.</li>
+                                    <li>Email: supportduyminhwatch@.com</li>
+                                    <li>Hotline: +084 0909 090 909</li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->

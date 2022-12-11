@@ -51,21 +51,21 @@
         <p style="font-size: 25px;font-weight: bold;font-family: 'Times New Roman', Times, serif;color: #c05353;margin-bottom: 20px;">GỢI Ý SẢN PHẨM</p>
     </div>
     <?php include('carouselop.php') ?>
-    <div class="container" style="margin-top: 30px;">
+    <!-- <div class="container" style="margin-top: 30px;">
         <div class="row">
             <div class="col-sm-4"><a href=""><img style="border-radius: 5px;" src="./images/banner6.webp" alt=""></a></div>
             <div class="col-sm-4"><a href=""><img style="border-radius: 5px;" src="./images/banner7.webp" alt=""></a></div>
             <div class="col-sm-4"><a href=""><img style="border-radius: 5px;" src="./images/banner8.webp" alt=""></a></div>
         </div>
-    </div>
+    </div> -->
     <div class="container" style="margin-top: 40px;">
         <p style="font-size: 25px;font-weight: bold;font-family: 'Times New Roman', Times, serif;color: #c05353;margin-bottom: 20px;">DANH MỤC HOT</p>
     </div>
     <div class="container" style="margin-top: 30px;">
         <div class="row" style="margin-bottom: 20px;">
-            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_1_medium.png?v=10891" alt=""></span><span style="padding-left: 7px;">Đồng hồ nam</span></a></div>
-            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_2_medium.png?v=10891" alt=""></span></a><span style="padding-left: 10px;">Đồng hồ nữ</span></div>
-            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_3_medium.png?v=10891" alt=""></span></a><span style="padding-left: 10px;">Đồng hồ đôi</span></div>
+            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://cdn3.dhht.vn/wp-content/uploads/2018/10/icon-1.jpg" alt=""></span><span style="padding-left: 7px;">Đồng hồ nam</span></a></div>
+            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://cdn3.dhht.vn/wp-content/uploads/2018/10/icon-2.jpg" alt=""></span></a><span style="padding-left: 10px;">Đồng hồ nữ</span></div>
+            <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://cdn3.dhht.vn/wp-content/uploads/2018/10/icon-3.jpg" alt=""></span></a><span style="padding-left: 10px;">Đồng hồ đôi</span></div>
             <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_3_medium.png?v=10891" alt=""></span></a><span style="padding-left: 20px;">Phụ kiện</span></div>
             <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_4_medium.png?v=10891" alt=""></span></a><span style="padding-left: 15px;">Thương hiệu</span></div>
             <div class="col-sm-2"><a style="display: flex;flex-direction: column;" href=""><span><img style="border-radius: 5px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_category_5_medium.png?v=10891" alt=""></span></a><span style="padding-left: 20x;">Thời thượng </span></div>

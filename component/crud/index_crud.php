@@ -139,7 +139,7 @@
                         require_once "../../db/config.php";
                         if (isset($_GET['search'])) {
                             $filtervalues = $_GET['search'];
-                            $query = "SELECT * FROM products WHERE CONCAT(title,thumbnail,content,price,quantity) LIKE '%$filtervalues%' ";
+                            $query = "SELECT * FROM san_pham WHERE CONCAT(ten_san,anh,content,gia,quantity) LIKE '%$filtervalues%' ";
                             $query_run = mysqli_query($link, $query);
 
                             if (mysqli_num_rows($query_run) > 0) {
@@ -147,10 +147,10 @@
                         ?>
                                     <tr>
                                         <td><?= $items['id']; ?></td>
-                                        <td><?= $items['title']; ?></td>
-                                        <td><?= $items['thumbnail']; ?></td>
+                                        <td><?= $items['ten_san']; ?></td>
+                                        <td><?= $items['anh']; ?></td>
                                         <td><?= $items['content']; ?></td>
-                                        <td><?= $items['price']; ?></td>
+                                        <td><?= $items['gia']; ?></td>
                                         <td><?= $items['quantity']; ?></td>
                                     </tr>
                                 <?php
@@ -171,17 +171,17 @@
                     // Include config file
                     require_once "../../db/config.php";
                     // Attempt select query execution
-                    $sql = "SELECT * FROM products";
+                    $sql = "SELECT * FROM san_pham";
                     if ($result = mysqli_query($link, $sql)) {
                         if (mysqli_num_rows($result) > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th>id</th>";
-                            echo "<th>title</th>";
-                            echo "<th>thumbnail</th>";
+                            echo "<th>ten_san</th>";
+                            echo "<th>anh</th>";
                             echo "<th>content</th>";
-                            echo "<th>price</th>";
+                            echo "<th>gia</th>";
                             echo "<th>create_at</th>";
                             echo "<th>updated_at</th>";
                             echo "<th>quantity</th></th>";
@@ -191,10 +191,10 @@
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['title'] . "</td>";
-                                echo "<td>" . $row['thumbnail'] . "</td>";
+                                echo "<td>" . $row['ten_san'] . "</td>";
+                                echo "<td>" . $row['anh'] . "</td>";
                                 echo "<td>" . $row['content'] . "</td>";
-                                echo "<td>" . $row['price'] . "</td>";
+                                echo "<td>" . $row['gia'] . "</td>";
                                 echo "<td>" . $row['quantity'] . "</td>";
                                 echo "<td>";
                                 echo "<td>";

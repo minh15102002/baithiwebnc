@@ -3,7 +3,7 @@ require_once('utils/utility.php');
 require_once('db/dbhelper.php');
 
 $id = getGet('id');
-$product = executeResult('select * from products where id = ' . $id, true);
+$product = executeResult('select * from san_pham where id = ' . $id, true);
 if ($product == null) {
     header('Location: home.php');
     die;
@@ -64,7 +64,7 @@ if ($product == null) {
                     <div class="col-lg-2 col-md-2 col-12">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.php"><img src="images/rsz_storeball.png" alt="logo"></a>
+                            <a href="index.php"><img src="images/logo1.jpg" alt="logo"></a>
                         </div>
                         <!--/ End Logo -->
                         <!-- Search Form -->
@@ -86,13 +86,13 @@ if ($product == null) {
                         <div class="search-bar-top">
                             <div class="search-bar">
                                 <select>
-                                    <option selected="selected">All Category</option>
-                                    <option>watch</option>
-                                    <option>mobile</option>
-                                    <option>kid’s item</option>
+                                    <option selected="selected">Danh mục</option>
+                                    <option>Đồng hồ nam</option>
+                                    <option>Đồng hồ nữ</option>
+                                    <option>Đồng hồ đôi</option>
                                 </select>
                                 <form>
-                                    <input name="search" placeholder="Search Products Here....." type="search">
+                                    <input name="search" placeholder="Tìm sản phẩm ....." type="search">
                                     <button class="btnn"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -158,7 +158,7 @@ if ($product == null) {
             </div>
         </div>
         <!-- Header Inner -->
-        <div class="header-inner">
+        <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
             <div class="container">
                 <div class="cat-nav-head">
                     <div class="row">
@@ -169,22 +169,22 @@ if ($product == null) {
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>
-                                                <li><a href="#">Service</a></li>
-                                                <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
+                                                <li ><a style="color:gray ;" href="index.php">Home</a></li>
+                                                <li class="active"><a style="color:gray ;" href="#">Product</a></li>
+                                                <li><a style="color:gray ;" href="#">Service</a></li>
+                                                <li><a style="color:gray ;" href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
                                                     <ul class="dropdown">
                                                         <li><a href="cart.php">Cart</a></li>
                                                         <li><a href="checkout.php">Checkout</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Pages</a></li>
-                                                <li><a href="#">Blog<i class="ti-angle-down"></i></a>
+                                                <li><a style="color:gray ;" href="#">Pages</a></li>
+                                                <li><a style="color:gray ;" href="#">Blog<i class="ti-angle-down"></i></a>
                                                     <ul class="dropdown">
                                                         <li><a href="blog-single-sidebar.php">Blog Single Sidebar</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.php">Contact Us</a></li>
+                                                <li><a style="color:gray ;" href="contact.php">Contact Us</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -196,6 +196,7 @@ if ($product == null) {
                 </div>
             </div>
         </div>
+    
         <!--/ End Header Inner -->
     </header>
     <!--/ End Header -->
@@ -207,7 +208,7 @@ if ($product == null) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="images p-3">
-                                <div class="text-center p-4"> <img id="main-image" src="<?= $product['thumbnail'] ?>" width="400" /> </div>
+                                <div class="text-center p-4"> <img id="main-image" src="<?= $product['anh'] ?>" width="400" /> </div>
                                 <!-- <div class="thumbnail text-center"> <img onclick="change_image(this)" src="images/img-sneaker-02.jpg" width="70"> <img onclick="change_image(this)" src="images/img-sneaker-03.jpg" width="70"> </div> -->
                             </div>
                         </div>
@@ -217,12 +218,12 @@ if ($product == null) {
                                     <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div>
                                 </div>
                                 <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Orianz</span>
-                                    <h5 class="text-uppercase"><?= $product['title'] ?></h5>
-                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price">$<?= $product['price'] ?></span>
+                                    <h5 class="text-uppercase"><?= $product['ten_san'] ?></h5>
+                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price">$<?= $product['gia'] ?></span>
                                         <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div>
                                     </div>
                                 </div>
-                                <p class="about"><?= $product['content'] ?></p>
+                                <p class="about"><?= $product['mo_ta'] ?></p>
                                 <!-- <div class="sizes mt-5">
                                     <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>
                                 </div> -->

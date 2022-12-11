@@ -15,7 +15,7 @@ if (count($idList) > 0) {
     $idList = implode(',', $idList);
 
 
-    $sql = "select * from products where id in ($idList) ";
+    $sql = "select * from san_pham where id in ($idList) ";
     $cartList = executeResult($sql);
 } else {
     $cartList = [];
@@ -78,10 +78,10 @@ if (count($idList) > 0) {
                     <table class="table shopping-summery">
                         <thead>
                             <tr class="main-hading">
-                                <th>PRODUCT</th>
-                                <th>NAME</th>
-                                <th class="text-center">UNIT PRICE</th>
-                                <th class="text-center">NUM</th>
+                                <th>Ảnh</th>
+                                <th>Tên</th>
+                                <th class="text-center">Giá</th>
+                                <th class="text-center">Số lượng</th>
                                 <th class="text-center"><i class="ti-trash remove-icon"></i></th>
                             </tr>
                         </thead>
@@ -98,14 +98,14 @@ if (count($idList) > 0) {
                                         break;
                                     }
                                 }
-                                $total  += $num * $item['price'];
+                                $total  += $num * $item['gia'];
                                 echo '<tr>
-                                <td class="image" data-title="No"><img src="' . $item['thumbnail'] . '" alt="#"></td>
+                                <td class="image" data-title="No"><img src="' . $item['anh'] . '" alt="#"></td>
                                 <td class="product-des" data-title="Description">
-                                    <p class="product-name"><a href="#">' . $item['title'] . '</a></p>
-                                    <p class="product-des">' . $item['content'] . '</p>
+                                    <p class="product-name"><a href="#">' . $item['ten_san'] . '</a></p>
+                                    <p class="product-des">' . $item['mo_ta'] . '</p>
                                 </td>
-                                <td class="price" data-title="Price"><span>$' . $item['price'] . '</span></td>
+                                <td class="price" data-title="Price"><span>$' . $item['gia'] . '</span></td>
                                 <td class="total-amount" data-title="Total"><span>' . $num . '</span></td>
                                 <td class="action" data-title="Remove"><a href="#" onclick="deleteCart(' . $item['id'] . ')"><i class="ti-trash remove-icon" ></i></a></td>
                                 ';
@@ -151,13 +151,13 @@ if (count($idList) > 0) {
                                                 break;
                                             }
                                         }
-                                        $total  += $num * $item['price'];
+                                        $total  += $num * $item['gia'];
 
                                         echo ' <ul>
-                                <li>Cart Subtotal<span>$' . $item['price'] . '</span></li>
+                                <li>Cart Subtotal<span>$' . $item['gia'] . '</span></li>
                                 <li>Shipping<span>Free</span></li>
                                 <li>You Save<span>$5.00</span></li>
-                                <li class="last">You Pay<span>$' . $item['price'] . '</span></li>
+                                <li class="last">You Pay<span>$' . $item['gia'] . '</span></li>
                             </ul>
                                 ';
                                     }
@@ -230,7 +230,7 @@ if (count($idList) > 0) {
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <!-- Start Newsletter Inner -->
                         <div class="inner">
-                            <h4>Newsletter</h4>
+                            <h4>Bản tin</h4>
                             <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
                             <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
                                 <input name="EMAIL" placeholder="Your email address" required="" type="email">
@@ -258,7 +258,7 @@ if (count($idList) > 0) {
                     <div class="row no-gutters">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <!-- Product Slider -->
-                            <div class="product-gallery">
+                            <!-- <div class="product-gallery">
                                 <div class="quickview-slider-active">
                                     <div class="single-slider">
                                         <img src="images/modal1.jpg" alt="#">
@@ -273,7 +273,7 @@ if (count($idList) > 0) {
                                         <img src="images/modal4.jpg" alt="#">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- End Product slider -->
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -370,23 +370,21 @@ if (count($idList) > 0) {
                         <!-- Single Widget -->
                         <div class="single-footer about">
                             <div class="logo">
-                                <a href="index.php"><img src="images/logo2.png" alt="#"></a>
+                                <a href="index.php"><img src="./images/logo1.jpg" alt="#" style="max-width: 100px;border-radius: 50%;"></a>
                             </div>
-                            <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-                            <p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+                            <p class="call">Liên hệ 24/7<span><a href="tel:123456789">+084 0909 090 909</a></span></p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer links">
-                            <h4>Information</h4>
+                            <h4>Thông Tin</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Faq</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Về chúng tôi</a></li>
+                                <li><a href="#">Câu hỏi thường gặp</a></li>
+                                <li><a href="#">Điều khoản và điều kiện</a></li>
+                                <li><a href="#">Hỗ trợ</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -394,13 +392,12 @@ if (count($idList) > 0) {
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer links">
-                            <h4>Customer Service</h4>
+                            <h4>Dịch Vụ</h4>
                             <ul>
-                                <li><a href="#">Payment Methods</a></li>
-                                <li><a href="#">Money-back</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Phương thức thanh toán</a></li>
+                                <li><a href="#">Hoàn trả</a></li>
+                                <li><a href="#">Vận chuyển</a></li>
+                                <li><a href="#">Chính sách bảo mật</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -408,14 +405,14 @@ if (count($idList) > 0) {
                     <div class="col-lg-3 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer social">
-                            <h4>Get In Tuch</h4>
+                            <h4>Địa chỉ liên hệ</h4>
                             <!-- Single Widget -->
                             <div class="contact">
                                 <ul>
-                                    <li>NO. 342 - London Oxford Street.</li>
-                                    <li>012 United Kingdom.</li>
-                                    <li>info@eshop.com</li>
-                                    <li>+032 3456 7890</li>
+                                    <!-- <li>Dan Phuong</li> -->
+                                    <li>Hà Nội.</li>
+                                    <li>Email: supportduyminhwatch@.com</li>
+                                    <li>Hotline: +084 0909 090 909</li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -438,12 +435,12 @@ if (count($idList) > 0) {
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="left">
-                                <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a> - All Rights Reserved.</p>
+                                <p>Copyright by DMTwatch© 2020 <a href="http://www.wpthemesgrid.com" target="_blank"></a> - All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="right">
-                                <img src="images/payments.png" alt="#">
+                                <!-- <img src="images/payment-method.png" alt="#"> -->
                             </div>
                         </div>
                     </div>

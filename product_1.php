@@ -36,29 +36,29 @@
                     <h2 style="font-family: 'Times New Roman', Times, serif;">DANH MỤC</h2>
                     <div>
                         <ul style="margin-top: 20px;">
-                            <li><a style="font-weight: bold;" href="">Chăm Sóc Da</a>
+                            <li><a style="font-weight: bold;" href="product_1.php">Đồng hồ nam</a>
                                 <ul style="margin-top: 15px;">
-                                    <li style="margin-top: 15px;"><a href="">Giải Pháp Làn Da</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Chăm Sóc Cơ Thể</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Quy Trình Dưỡng Da</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Làm Đẹp</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Casio</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Citizen</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Seiko</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Tissot</a></li>
                                 </ul>
                             </li>
-                            <li style="margin-top: 15px;"><a style="font-weight: bold;" href=""><span></span>Trang Điểm</a>
+                            <li style="margin-top: 15px;"><a style="font-weight: bold;"  href="product_2.php"><span></span>Đồng hồ nữ</a>
                                 <ul>
-                                    <li style="margin-top: 15px;"><a href="">Mắt</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Mặt</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Môi</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Saga</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Quartz</a></li>
+                                    <li style="margin-top: 15px;"><a href="">Casio</a></li>
 
                                 </ul>
                             </li>
                         </ul>
                     </div>
-                    <img style="margin-top: 20px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_brandlist_item_1_banner_d_1024x1024.jpg?v=10908" alt="" width="100%">
+                    <!-- <img style="margin-top: 20px;" src="https://theme.hstatic.net/1000006063/1000748098/14/home_brandlist_item_1_banner_d_1024x1024.jpg?v=10908" alt="" width="100%"> -->
                 </div>
             </div>
             <div class="col-sm-8">
-                <img src="./images/banner4.webp" alt="" width="100%">
+                <img src="./images/dong-ho-nam-banner.webp" alt="" width="100%">
                 <div class="product-area section" style="margin-top: -70px;">
                     <div class="container">
                         <p style="font-size: 25px;font-weight: bold;font-family: 'Times New Roman', Times, serif;color: #c05353;margin-bottom: 20px;">CHĂM SÓC DA</p>
@@ -69,7 +69,7 @@
                                         <div class="tab-pane fade show active" id="man" role="tabpanel">
                                             <div class="tab-single">
                                                 <div class="row">
-                                                    <?php include('./component/product_chamsocda.php') ?>
+                                                    <?php include('./component/product_nam.php') ?>
                                                 </div>
                                             </div>
                                         </div>
